@@ -14,7 +14,7 @@
 
         <div>
 
-        <img src= "/../public/img/logo.png" width="250" height="250" >
+        <img src= "/img/logo.png" width="250" height="250" >
 
         </div>
 
