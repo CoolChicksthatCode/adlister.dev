@@ -18,7 +18,7 @@ function pageController()
             $mainView = '../views/home.php';
             break;
 
-        case '/items':
+        case '/ads':
             $mainView = '../views/ads/index.php';
             break;
 
@@ -30,7 +30,7 @@ function pageController()
             // $mainView = '../views/home.php'; <<FIX THIS <<
             break;
 
-        case '/users/create':
+        case '/signup':
             $mainView = '../views/users/signup.php'; 
             break;
 
