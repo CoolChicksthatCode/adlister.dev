@@ -14,9 +14,42 @@ function pageController()
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
         // TODO: put routes here
-        case '/home':
+        case '/':
             $mainView = '../views/home.php';
             break;
+
+        case '/items':
+            $mainView = '../views/ads/index.php';
+            break;
+
+        case '/items/show?id=':
+            // $mainView = '../views/home.php'; <<FIX THIS <<
+            break;
+
+        case '/users/account?id=':
+            // $mainView = '../views/home.php'; <<FIX THIS <<
+            break;
+
+        case '/users/create':
+            $mainView = '../views/users/signup.php'; 
+            break;
+
+        case '/login':
+            $mainView = '../views/users/login.php'; 
+            break;
+
+        case '/items/create':
+            $mainView = '../views/ads/create.php'; 
+            break;
+
+        case '/items/create':
+            $mainView = '../views/ads/create.php'; 
+            break;
+
+        case '/items/edit?id=':
+            // $mainView = '../views/ads/edit.php'; <<fix this!!
+            break;
+
         default: // displays 404 if route not specified above
             $mainView = '../views/404.php';
             break;
