@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../utils/helper_functions.php';
+require_once __DIR__ . '/../utils/login_functions.php';
 
 function pageController()
 {
@@ -35,6 +36,8 @@ function pageController()
             break;
 
         case '/login':
+            userLoggedIn();
+            attemptLogin();
             $mainView = '../views/users/login.php'; 
             break;
 
