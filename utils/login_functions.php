@@ -9,6 +9,7 @@ function userLoggedIn()
 	if(Auth::check()) {
 		// Log::info('');
 		header('Location: /account');
+		die();
 	}
 }
 
@@ -16,6 +17,7 @@ function userNotLoggedIn()
 {
 	if(!Auth::check()){
 		header('Location: /login');
+		die();
 	}
 }
 
@@ -35,7 +37,12 @@ function attemptLogin()
 
 }
 
-
+function logout()
+{
+	Auth::logout();
+	header('Location: /');
+	die();
+}
 
 
 

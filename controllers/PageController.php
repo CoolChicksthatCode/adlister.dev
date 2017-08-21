@@ -41,6 +41,10 @@ function pageController()
             $mainView = '../views/users/login.php'; 
             break;
 
+        case '/logout':
+            logout();
+            break;
+
         case '/items/create':
             $mainView = '../views/ads/create.php'; 
             break;
