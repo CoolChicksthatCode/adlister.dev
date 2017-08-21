@@ -63,7 +63,28 @@ function userSignUp()
 	}
 }
 
+function updateAccountInfo()
+{
+	$user = Auth::user();
 
+	if(!empty($_POST)){
+		$name = Input::get('name');
+		$email = Input::get('email');
+		$username = Input::get('username');
+		$userId = Auth::id();
+
+		$user->name = $name;
+		$user->email = $email;
+		$user->username = $username;
+		$user->save();
+
+		$_SESSION['SUCCESS_MESSAGE'] = "Account succesfully updated!";
+
+		header('Location: /users/account?id=' . $userId );
+		die();
+
+	}
+}
 
 
 
