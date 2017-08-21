@@ -21,6 +21,7 @@ function pageController()
             break;
 
         case '/ads':
+            Ads::all();
             $mainView = '../views/ads/index.php';
             break;
 
@@ -56,8 +57,12 @@ function pageController()
         //     $mainView = '../views/ads/create.php'; 
         //     break;
 
-        case '/items/edit?id=':
-            // $mainView = '../views/ads/edit.php'; <<fix this!!
+        case '/items/edit?id=':GET: edit account form / POST: update account with submission info
+             rerouteIfNotLoggedIn();
+             checkIfUserIdEntered();
+             editInputIfExisits();
+             $data['username'] = User::find(Input::get('id'));
+             $main_view = '../views/users/edit.php';
             break;
 
         default: // displays 404 if route not specified above
