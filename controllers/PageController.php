@@ -28,7 +28,7 @@ function pageController()
             // $mainView = '../views/home.php'; <<FIX THIS <<
             break;
 
-        case 'users/account?id=<?=Auth::id();?>' :
+        case '/users/account' :
             $mainView = '../views/users/account.php'; 
             break;
 
