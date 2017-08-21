@@ -25,12 +25,18 @@ function pageController()
             $mainView = '../views/ads/index.php';
             break;
 
-        case '/items/show?id=':
-            // $mainView = '../views/home.php'; <<FIX THIS <<
+        case '/items/show':
+            header('Location: /items/show');
+            $mainView = '../views/ads/show.php'; 
             break;
 
         case '/users/account' :
             $mainView = '../views/users/account.php'; 
+            break;
+
+        case '/users/edit' :
+            updateAccountInfo();
+            $mainView = '../views/users/edit.php'; 
             break;
 
         case '/users/create':
@@ -57,6 +63,7 @@ function pageController()
         //     $mainView = '../views/ads/create.php'; 
         //     break;
 
+
         case '/items/edit':
             if(isset($_SESSION['IS_LOGGED_IN'])) {
              $main_view = '../views/ads/edit.php';
@@ -65,6 +72,7 @@ function pageController()
                 header('Location: /login');
             }
             break;
+
 
         default: // displays 404 if route not specified above
             $mainView = '../views/404.php';

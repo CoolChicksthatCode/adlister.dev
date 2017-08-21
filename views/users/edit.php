@@ -1,5 +1,8 @@
 <div class="container">
 
+    <?php $user = Auth::user();?>
+
+
     <section id="login">
 
         <div class="row">
