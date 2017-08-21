@@ -59,12 +59,10 @@ function userSignUp()
 		$user->username = $username;
 		$user->password = $password; 
 		$user->save();
-
 	
 	}
-
-	
 }
+
 
 
 
