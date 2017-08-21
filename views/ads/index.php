@@ -1,14 +1,4 @@
 
-// Page for an index of advertisements
-//  $id = Input::get('id');
-// $name = Input::get('itemName');
-// $description = Input::get('description');
-// $sellerName = Input::get('sellerName');
-// $imageUrl = Input::get('imageUrl');
-
-// Ad::displayFeaturedAds();
-
-// foreach($items as $item): 
 <!--Page for an index of advertisements-->
 <?php
 require_once "../models/Model.php";
@@ -21,7 +11,7 @@ $ads = Ads::all();
 
 ?>
 
-<h2 class="text-center">All items for sale</h2>
+<h1 class="text-center">All items for sale</h1>
 <br>
 <div class="container">
 	<div class="row">
