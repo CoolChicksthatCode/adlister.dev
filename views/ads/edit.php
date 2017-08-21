@@ -1,5 +1,18 @@
+<?php
+require_once "../models/Model.php";
+require_once "../models/User.php";
+require_once "../models/Ad.php";
+require_once "../utils/Auth.php";
+require_once "../utils/Input.php";
+
+
+
+
+?>
+
+
 <!--Page that includes the form to edit an existing ad-->
-<form>
+<form method="POST">
 	<br>
 	<div class="col-md-6 col-md-offset-3">
 		<h2>Edit item!</h2>

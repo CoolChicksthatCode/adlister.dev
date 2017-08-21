@@ -1,3 +1,5 @@
+<?php 
+ ?>
 <!--Page for user account home-->
 <div class="container">
 

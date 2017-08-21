@@ -1,3 +1,14 @@
+
+// Page for an index of advertisements
+//  $id = Input::get('id');
+// $name = Input::get('itemName');
+// $description = Input::get('description');
+// $sellerName = Input::get('sellerName');
+// $imageUrl = Input::get('imageUrl');
+
+// Ad::displayFeaturedAds();
+
+// foreach($items as $item): 
 <!--Page for an index of advertisements-->
 <?php
 require_once "../models/Model.php";
