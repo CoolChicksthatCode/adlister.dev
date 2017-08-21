@@ -1,10 +1,18 @@
 <!--Page for an index of advertisements-->
+<!-- $id = Input::get('id');
+$name = Input::get('itemName');
+$description = Input::get('description');
+$sellerName = Input::get('sellerName');
+$imageUrl = Input::get('imageUrl');
 
-<!--<?php foreach($ads as $ad): ?>
-	<h5><?= Input::escape($ad->itemName) ?></h5>
-	<h5><?= Input::escape($ad->fileinput) ?></h5>
-	<h5><?= Input::escape($ad->description) ?></h5>
-	<h5><?= Input::escape($ad->sellerName) ?></h5>
+Ad::displayFeaturedAds();
+ -->
+<!--<?php foreach($items as $item): ?>
+	<h5><?= Input::escape($item->itemName) ?></h5>
+	<h5><?= Input::escape($item->price) ?></h5>
+	<h5><?= Input::escape($item->description) ?></h5>
+	<h5><?= Input::escape($item->sellerName) ?></h5>
+	<h5><?= Input::escape($item->imageUrl) ?></h5>
 	<?php endforeach; ?>-->
 
 
