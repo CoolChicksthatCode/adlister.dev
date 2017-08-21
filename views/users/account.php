@@ -1,9 +1,8 @@
-<?php 
- ?>
+
 <!--Page for user account home-->
 <div class="container">
 
-	<?php $user = Auth::user();?>
+	<?php $user = Auth::user(); var_dump($user); var_dump($_SESSION);?>
 
 	<section id="account">
 
