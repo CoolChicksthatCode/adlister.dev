@@ -30,7 +30,7 @@ function attemptLogin()
 
 	if(!empty($_POST) && Auth::attempt($username, $password)){
 
-		header('Location: /account');
+		header('Location: /users/account?id=' . Auth::id() );
 		die();
 
 	}
