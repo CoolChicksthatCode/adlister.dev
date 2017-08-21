@@ -9,7 +9,7 @@ function userLoggedIn()
 {
 	if(Auth::check()) {
 		// Log::info('');
-		header('Location: /account');
+		header('Location: /users/account?id=' . Auth::id() );
 		die();
 	}
 }
@@ -59,7 +59,10 @@ function userSignUp()
 		$user->username = $username;
 		$user->password = $password; 
 		$user->save();
+
+	
 	}
+
 	
 }
 
