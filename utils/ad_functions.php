@@ -26,9 +26,36 @@ function addAnItem()
 	}
 }
 
+function rerouteAdIfNotLoggedIn()
+{
+    if (!Auth::check())
+    {
+        header('Location: /login');
+    }
+}
 
-	// if (empty($_POST)) {
-	// 	var_dump("The field is empty.");
-	// } else if (!empty($_POST)) {
-	// 	addAnItem();
-	// }
+function checkIfUserIdEntered()
+{
+    if (!Input::has('id'))
+    {
+        $_SESSION['ERROR_MESSAGE'] = 'User account not found. Please try again.';
+        header('Location: /items');
+        die();
+    }
+}
+function editInputIfExisits()
+{
+    // checks for POST information and if user can edit specified account
+    if (hasInput('POST') && Input::get('id') == Auth::id())
+    {
+        $user = User::find(Input::get('id'));
+        $user->name = Input::get('name');
+        $user->email = Input::get('email');
+        $user->username = Input::get('username');
+        $user->save();
+        $_SESSION['SUCCESS_MESSAGE'] = 'Account successfully updated';
+        header('Location: /users/account?id=' . $user->id);
+        die();
+    }
+}
+	
