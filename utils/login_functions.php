@@ -1,6 +1,7 @@
 <?php 
 require_once 'Auth.php';
 require_once 'Input.php';
+require_once '../models/User.php';
 
 
 //Is the user logged in? Auth::check returns boolean. If user logged in redirects to user account page 
@@ -46,6 +47,19 @@ function logout()
 
 function userSignUp()
 {
+	if(!empty($_POST)){
+		$name = Input::get('name');
+		$email = Input::get('email');
+		$username = Input::get('username');
+		$password = Input:: get('password');
+
+		$user = new User();
+		$user->name = $name;
+		$user->email = $email;
+		$user->username = $username;
+		$user->password = $password; 
+		$user->save();
+	}
 	
 }
 
