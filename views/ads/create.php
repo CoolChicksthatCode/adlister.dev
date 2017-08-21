@@ -6,7 +6,7 @@ require_once "../models/Ad.php";
 require_once "../utils/Auth.php";
 require_once "../utils/Input.php";
 
-var_dump($_POST);
+// var_dump($_POST);
 
 ?>
 
@@ -43,12 +43,12 @@ var_dump($_POST);
 	    	<label for="username">Username</label>
 	   		<input type="username" class="form-control" id="username" name="username" placeholder="username">
 	  	</div>
-	  	<!-- Photo File Input -->
-		<!-- <div class="form-group">
-	    	<label for="fileinput">Example file input</label>
-	    	<input type="fileinput" class="form-control-file" id="fileinput">
-	  	</div> -->
-	  	<!-- Submit Button -->
+	  	<!-- File Photo Input -->
+	  	<!-- <div class="form-group">
+    		<label for="InputFile">File input</label>
+    		<input type="file" id="InputFile">
+    	</div> -->
 		<input type="submit" class="btn btn-default">
+  		</div>
 	</div>
 </form>
