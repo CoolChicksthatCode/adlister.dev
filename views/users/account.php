@@ -4,8 +4,9 @@
 	<section id="account">
 
 		<div class="row">
+			<?php $user = Auth::user();?>
 
-			<h1 class="section-title">Welcome </h1>
+			<h1 class="section-title">Welcome, <?= $user->username ?> </h1>
 
 			<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
 				<div class="alert alert-danger">
@@ -21,8 +22,14 @@
 			<?php endif; ?>
 
 			<div class="col-md-6 col-md-offset-3">
-
-
+				<div id="use-details">
+				<br>
+					<h3>Account Details</h3>
+ 					<p>Name: <?= $user->name ?></p>
+					<p>Email: <?= $user->email ?></p>
+					<p>Username: <?= $user->username ?></p>
+					
+				</div>
 
 			</div>
 		</div>
