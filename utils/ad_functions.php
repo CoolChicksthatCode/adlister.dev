@@ -26,36 +26,17 @@ function addAnItem()
 	}
 }
 
-function rerouteAdIfNotLoggedIn()
+function editItem()
 {
-    if (!Auth::check())
-    {
-        header('Location: /login');
-    }
+        $ad = Ads::find(Input::get('id'));
+        // if ($ad->id == Auth::user()->id)
+        // {
+        //     $ad->name = Input::get('name');
+        //     $ad->price = removeMoneyCharacters(Input::get('price'));
+        //     $ad->description = Input::get('description');
+            
+        //     $ad->save();
+        //     header('Location: /ads');
+        //     die();
+        // }
 }
-
-function checkIfUserIdEntered()
-{
-    if (!Input::has('id'))
-    {
-        $_SESSION['ERROR_MESSAGE'] = 'User account not found. Please try again.';
-        header('Location: /items');
-        die();
-    }
-}
-function editInputIfExisits()
-{
-    // checks for POST information and if user can edit specified account
-    if (hasInput('POST') && Input::get('id') == Auth::id())
-    {
-        $user = User::find(Input::get('id'));
-        $user->name = Input::get('name');
-        $user->email = Input::get('email');
-        $user->username = Input::get('username');
-        $user->save();
-        $_SESSION['SUCCESS_MESSAGE'] = 'Account successfully updated';
-        header('Location: /users/account?id=' . $user->id);
-        die();
-    }
-}
-	

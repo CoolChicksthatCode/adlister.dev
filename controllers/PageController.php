@@ -57,12 +57,13 @@ function pageController()
         //     $mainView = '../views/ads/create.php'; 
         //     break;
 
-        case '/items/edit?id=':GET: edit account form / POST: update account with submission info
-             rerouteIfNotLoggedIn();
-             checkIfUserIdEntered();
-             editInputIfExisits();
-             $data['username'] = User::find(Input::get('id'));
-             $main_view = '../views/users/edit.php';
+        case '/items/edit':
+            if(isset($_SESSION['IS_LOGGED_IN'])) {
+             $main_view = '../views/ads/edit.php';
+             // editItem();   
+            } else {
+                header('Location: /login');
+            }
             break;
 
         default: // displays 404 if route not specified above

@@ -11,7 +11,7 @@ require_once __DIR__ . '/../bootstrap.php';
 <body>
     <?php require '../views/partials/navbar.php'; ?>
 
-    <?php require $mainView; ?>
+    <?php echo $mainView; ?>
 
 
 
