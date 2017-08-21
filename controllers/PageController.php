@@ -26,12 +26,17 @@ function pageController()
             break;
 
         case '/items/show':
-            header('Location: /items/show?id={n}');
+            header('Location: /items/show');
             $mainView = '../views/ads/show.php'; 
             break;
 
         case '/users/account' :
             $mainView = '../views/users/account.php'; 
+            break;
+
+        case '/users/edit' :
+            updateAccountInfo();
+            $mainView = '../views/users/edit.php'; 
             break;
 
         case '/users/create':
