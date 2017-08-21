@@ -16,7 +16,7 @@ function addAnItem()
 	if (empty($_POST)) {
 		var_dump("The field is empty.");
 	} else if (!empty($_POST)) {
-		Model::insert();
+		Ad::insert();
 	}
 }
 
@@ -24,7 +24,7 @@ function addAnItem()
 ?>
 
 
-<form action ="adlister.dev/items/create" method="post">
+<form method="post" action="adlister.dev/items/create">
 	<br>
 	<div class="col-md-6 col-md-offset-3">
 		<h2>Add a new item here!</h2>
