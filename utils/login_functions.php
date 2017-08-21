@@ -32,7 +32,6 @@ function attemptLogin()
 		header('Location: /account');
 		die();
 
-
 	}
 
 }
@@ -45,7 +44,10 @@ function logout()
 }
 
 
-
+function userSignUp()
+{
+	
+}
 
 
 

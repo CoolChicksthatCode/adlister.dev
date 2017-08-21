@@ -32,6 +32,7 @@ function pageController()
             break;
 
         case '/signup':
+            userSignUp();
             $mainView = '../views/users/signup.php'; 
             break;
 
