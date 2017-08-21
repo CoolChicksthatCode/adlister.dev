@@ -7,8 +7,9 @@ require_once 'Input.php';
 function userLoggedIn()
 {
 	if(Auth::check()) {
-		Log::info();
+		// Log::info('');
 		header('Location: /account');
+		die();
 	}
 }
 
@@ -16,16 +17,32 @@ function userNotLoggedIn()
 {
 	if(!Auth::check()){
 		header('Location: /login');
+		die();
 	}
 }
 
 function attemptLogin()
 {
-	
+	$username = Input::get('email_user');
+	$password = Input::get('password');
+	$userId = Auth::id(); 
+
+	if(!empty($_POST) && Auth::attempt($username, $password)){
+
+		header('Location: /account');
+		die();
+
+
+	}
 
 }
 
-
+function logout()
+{
+	Auth::logout();
+	header('Location: /');
+	die();
+}
 
 
 
