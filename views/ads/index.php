@@ -1,54 +1,34 @@
 <!--Page for an index of advertisements-->
-<!-- $id = Input::get('id');
-$name = Input::get('itemName');
-$description = Input::get('description');
-$sellerName = Input::get('sellerName');
-$imageUrl = Input::get('imageUrl');
+<?php
+require_once "../models/Model.php";
+require_once "../models/User.php";
+require_once "../models/Ad.php";
+require_once "../utils/Auth.php";
+require_once "../utils/Input.php";
 
-Ad::displayFeaturedAds();
- -->
-<!--<?php foreach($items as $item): ?>
-	<h5><?= Input::escape($item->itemName) ?></h5>
-	<h5><?= Input::escape($item->price) ?></h5>
-	<h5><?= Input::escape($item->description) ?></h5>
-	<h5><?= Input::escape($item->sellerName) ?></h5>
-	<h5><?= Input::escape($item->imageUrl) ?></h5>
-	<?php endforeach; ?>-->
+$ads = Ads::all();
 
+?>
 
 <h2 class="text-center">All items for sale</h2>
 <br>
 <div class="container">
-<div class="row">
-	<div class="col-md-4">
-	ITEM NAME
-	<br>
-	<img src="/img/placeholder.png" width="275" height="275">
-	</div>
-	<div class="col-md-4">
-	ITEM NAME
-	<br>
-	<img src="/img/placeholder.png" width="275" height="275">
-	</div>	
-	<div class="col-md-4">
-	ITEM NAME
-	<br>
-	<img src="/img/placeholder.png" width="275" height="275">
-	</div>	
-	<div class="col-md-4">
-	ITEM NAME
-	<br>
-	<img src="/img/placeholder.png" width="275" height="275">
-	</div>
-	<div class="col-md-4">
-	ITEM NAME
-	<br>
-	<img src="/img/placeholder.png" width="275" height="275">
-	</div>	
-	<div class="col-md-4">
-	ITEM NAME
-	<br>
-	<img src="/img/placeholder.png" width="275" height="275">
-	</div>	
+	<div class="row">
+		<?php foreach($ads as $ad): ?>
+		<div class="col-md-4">
+		<img src="/img/placeholder.png" width="250" height="250">
+		<h5> Item Name: <?= Input::escape($ad->itemName) ?></h5>
+		<h5> Item Description: <?= Input::escape($ad->description) ?></h5>
+		</div>
+		<?php endforeach; ?>
+	<div>
+<div>
+
+
+
+
+	
+
 </div>
 </div>
+<!-- <img src="/img/placeholder.png" width="275" height="275"> -->
