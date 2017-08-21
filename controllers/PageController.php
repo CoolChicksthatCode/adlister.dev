@@ -28,11 +28,11 @@ function pageController()
             // $mainView = '../views/home.php'; <<FIX THIS <<
             break;
 
-        case '/account':
+        case 'users/account?id=<?=Auth::id();?>' :
             $mainView = '../views/users/account.php'; 
             break;
 
-        case '/signup':
+        case '/users/create':
             userSignUp();
             $mainView = '../views/users/signup.php'; 
             break;
@@ -48,7 +48,7 @@ function pageController()
             break;
 
         case '/items/create':
-            // addAnItem();
+            addAnItem();
             $mainView = '../views/ads/create.php'; 
             break;
 
