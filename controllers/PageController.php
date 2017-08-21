@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../utils/helper_functions.php';
 require_once __DIR__ . '/../utils/login_functions.php';
+require_once __DIR__ . '/../utils/ad_functions.php';
 
 function pageController()
 {
@@ -47,12 +48,13 @@ function pageController()
             break;
 
         case '/items/create':
+            // addAnItem();
             $mainView = '../views/ads/create.php'; 
             break;
 
-        case '/items/create':
-            $mainView = '../views/ads/create.php'; 
-            break;
+        // case '/items/create':
+        //     $mainView = '../views/ads/create.php'; 
+        //     break;
 
         case '/items/edit?id=':
             // $mainView = '../views/ads/edit.php'; <<fix this!!

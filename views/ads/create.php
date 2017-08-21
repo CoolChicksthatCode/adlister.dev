@@ -1,5 +1,7 @@
 <!--Page for creating new advertisement listings-->
 <?php
+require_once "../models/Model.php";
+require_once "../models/User.php";
 
 function addAnItem() 
 {
@@ -10,21 +12,29 @@ function addAnItem()
 	$username = Input::get('username');
 	$imageUrl = Input::get('imageUrl');
 
-	var_dump($itemName);
-	var_dump($price);
-
-	if (empty($_POST)) {
-		var_dump("The field is empty.");
-	} else if (!empty($_POST)) {
-		Ad::insert();
-	}
+	$ad = new ad();
+	$ad->itemName = $itemName;
+	$ad->price = $price;
+	$ad->description = $description;
+	$ad->sellerName = $sellerName;
+	$ad->description = $description;
+	$ad->save();
 }
 
+var_dump($ad);
 
 ?>
+<!-- // 	if (empty($_POST)) {
+// 		var_dump("The field is empty.");
+// 	} else if (!empty($_POST)) {
+// 		addAnItem();
+// 	}
+ -->
 
 
-<form method="post" action="adlister.dev/items/create">
+
+
+<form method="POST" action="/items/create">
 	<br>
 	<div class="col-md-6 col-md-offset-3">
 		<h2>Add a new item here!</h2>
@@ -50,11 +60,11 @@ function addAnItem()
 	   		<input type="sellerName" class="form-control" id="sellerName" placeholder="Seller Info">
 	  	</div>
 	  	<!-- Photo File Input -->
-		<div class="form-group">
+		<!-- <div class="form-group">
 	    	<label for="fileinput">Example file input</label>
 	    	<input type="fileinput" class="form-control-file" id="fileinput">
-	  	</div>
+	  	</div> -->
 	  	<!-- Submit Button -->
-		<button type="button" class="btn btn-default">Post Item</button>
+		<button type="submit" class="btn btn-default">Post Item</button>
 	</div>
 </form>
