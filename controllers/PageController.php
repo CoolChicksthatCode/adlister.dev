@@ -26,7 +26,7 @@ function pageController()
             break;
 
         case '/items/show':
-            header('Location: /items/show');
+            // header('Location: /items/show');
             $mainView = '../views/ads/show.php'; 
             break;
 
