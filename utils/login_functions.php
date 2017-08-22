@@ -59,6 +59,13 @@ function userSignUp()
 		$user->username = $username;
 		$user->password = $password; 
 		$user->save();
+
+		Auth::attempt($user->username, Input::get('password')); 
+
+		$_SESSION['SUCCESS_MESSAGE'] = "Account succesfully created!";
+
+		header('Location: /users/account?id=' . $userId );
+		die();
 	
 	}
 }
@@ -68,15 +75,22 @@ function updateAccountInfo()
 	$user = Auth::user();
 
 	if(!empty($_POST)){
+
+		$userId = Auth::id();
+		Auth::logout();
+
 		$name = Input::get('name');
 		$email = Input::get('email');
 		$username = Input::get('username');
-		$userId = Auth::id();
+		$password = Input::get('password');
 
 		$user->name = $name;
 		$user->email = $email;
 		$user->username = $username;
+		$user->password = $password;
 		$user->save();
+
+        Auth::attempt($user->username, Input::get('password')); 
 
 		$_SESSION['SUCCESS_MESSAGE'] = "Account succesfully updated!";
 
@@ -84,6 +98,9 @@ function updateAccountInfo()
 		die();
 
 	}
+
+
+
 }
 
 

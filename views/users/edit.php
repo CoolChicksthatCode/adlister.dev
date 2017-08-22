@@ -1,6 +1,7 @@
+<?php $user = Auth::user(); ?>
 <div class="container">
 
-    <?php $user = Auth::user();?>
+
 
 
     <section id="login">
@@ -36,6 +37,11 @@
                     <div class="form-group">
                         <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= $user->username; ?>" data-required>
                     </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Confirm current password" data-required>
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Update Account</button>
 
                 </form>
