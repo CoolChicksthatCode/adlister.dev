@@ -33,12 +33,44 @@ $adUserId = $ad->userId;
 		<?php if($userId == $adUserId): ?>
 
 			<a href="/items/edit?id=<?=$ad->id;?>"><button>Edit Item</button></a>
-
+<!-- 
 			<a href="/items/delete?id=<?=$ad->id;?>"><button>DELETE Item</button></a>
 
-
+ -->
 		<?php endif ?>
 		
+
+
+			<a href="#" data-toggle="modal" data-target="#deleteModal"><button type="button" class="btn btn-primary btn-lg">Delete Item</button></a>
+
+			<div class="modal" id="deleteModal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button class="close" type="button" data-dismiss="modal">x</button>
+							<h2>Are you sure you want to delete <br> <?=$ad->itemName; ?>?</h2>
+						</div>
+						<div class="modal-body">
+							<form method="POST" action="">
+
+								<button name="delete" value="<?=$ad->id ?>" class="pull-right" type="submit">Submit</button>
+
+								<?php 
+									if(isset($_POST['delete']))
+									{
+										$ad->delete(); 
+
+										$_SESSION['SUCCESS_MESSAGE'] = "Item successfully deleted.";
+										header('Location: /users/account?=' . $userId);
+										die();
+									}
+								?>
+								
+							</form>	
+						</div>
+					</div>	
+				</div>	
+			</div>	
 
 
 	</div>
