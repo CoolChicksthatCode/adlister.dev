@@ -65,12 +65,15 @@ function pageController()
 
 
         case '/items/edit':
-            if(isset($_SESSION['IS_LOGGED_IN'])) {
+            editItem();   
              $mainView = '../views/ads/edit.php';
-             editItem();   
-            } else {
-                header('Location: /login');
-            }
+
+            // if(isset($_SESSION['IS_LOGGED_IN'])) {
+            //  editItem();   
+            //  $mainView = '../views/ads/edit.php';
+            // } else {
+            //     header('Location: /login');
+            // }
             break;
 
 
