@@ -9,6 +9,9 @@ require_once "../utils/Input.php";
 $id= Input::get('id');
 $ad = Ads::find($id);
 
+$userId = $_SESSION['LOGGED_IN_ID'];
+$adUserId = $ad->userId;
+
 ?>
 
 
@@ -23,4 +26,15 @@ $ad = Ads::find($id);
 		<h5> Seller Name: <?= Input::escape($ad->sellerName) ?></h5>
 		</div>
 	<div>
+
+	<div class="row">
+		<?php if($userId == $adUserId): ?>
+			<a href="/items/edit"><button>Edit Item</button></a>
+			<a href="/items/edit"><button>Delete Item</button></a>
+
+		<?php endif ?>
+		
+
+
+	</div>
 <div>

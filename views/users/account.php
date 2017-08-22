@@ -2,7 +2,14 @@
 <!--Page for user account home-->
 <div class="container">
 
-	<?php $user = Auth::user(); var_dump($user); var_dump($_SESSION);?>
+	<?php $user = Auth::user(); 
+	// var_dump($user); 
+	// var_dump($_SESSION);
+
+	$ads = Ads::userItems();
+	var_dump($ads);
+
+	?>
 
 	<section id="account">
 
@@ -27,7 +34,7 @@
 				<div id="user-details">
 				<br>
 					<h3>Account Details</h3>
- 					<p>Name: <?= $user->name ?></p>
+					<p>Name: <?= $user->name ?></p>
 					<p>Email: <?= $user->email ?></p>
 					<p>Username: <?= $user->username ?></p>
 					
@@ -44,11 +51,24 @@
 				<div id="account-items">
 				<br>
 					<h3>Items for Sale</h3>
- 					<p>User Id: <?= $user->id ?></p>
+
+					 <?php foreach($ads as $ad): ?>
+						<div class="col-md-3">
+							<img src="/img/placeholder.png" width="100" height="100">
+							<a href="/items/show?id=<?=$ad->id;?>"><h5> Item Name: <?= Input::escape($ad->itemName) ?></h5></a>
+							<h5> Item Description: <?= Input::escape($ad->description) ?></h5>
+							<a href="/items/edit"><button>Edit Item</button></a>
+
+						</div>
+					<?php endforeach; ?>
 					
 				</div>
+			</div>	
+			<div class="row">
+
 				<a href="/items/create"><button>Create New Ad</button></a>
-			</div>		
+				
+			</div>	
 		</div>
 	</section>
 
