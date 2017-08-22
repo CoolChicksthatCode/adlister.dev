@@ -1,17 +1,15 @@
 <?php
 require_once "../models/Model.php";
-require_once "../models/User.php";
-require_once "../models/Ad.php";
+// require_once "../models/User.php";
+// require_once "../models/Ad.php";
 require_once "../utils/Auth.php";
 require_once "../utils/Input.php";
 $user = Auth::user(); 
-var_dump($user); 
-var_dump($_SESSION);
-
 $id = $user->id;
 
-var_dump($id);
+$itemId= Input::get('id');
 
+$ad = Ads::find($itemId);
 
 ?>
 
@@ -25,23 +23,23 @@ var_dump($id);
 		<!-- Name -->
 	  	<div class="form-group">
 	    	<label for="name">Name</label>
-	    	<input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Name of the Item">
+	    	<input type="name" class="form-control" id="exampleFormControlInput1" value="<?= $ad->itemName; ?>" placeholder="Name of the Item">
 	  	</div>
 	  	<!-- Price -->
 	  	<div class="form-group">
 	    	<label for="price">Price</label>
-	   		<input type="price" class="form-control" id="exampleFormControlInput2" placeholder="Price of the Item ($)">
+	   		<input type="price" class="form-control" id="exampleFormControlInput2" value="<?= $ad->price;?>" placeholder="Price of the Item ($)">
 	  	</div>
 	  	<!-- Seller Info -->
-	  	<div class="form-group">
+	<!--   	<div class="form-group">
 	    	<label for="sellerinfo">Seller Info</label>
 	   		<input type="sellerinfo" class="form-control" id="exampleFormControlInput3" placeholder="Seller Info">
-	  	</div>
+	  	</div> -->
 	  	<!-- Description -->
 		<div class="form-group">
 	   		<label for="description">Item Description</label>
 	    	<br>
-	    	<textarea class="form-control col-md-6-offset-3" id="description" placeholder="Descibe the item you are listing for sale" rows="3"></textarea>
+	    	<textarea class="form-control col-md-6-offset-3" id="description" rows="3"><?= $ad->description ?></textarea>
 	  	</div>
 	  	<!-- Photo File Input -->
 		<div class="form-group">

@@ -9,6 +9,8 @@ require_once "../utils/Input.php";
 $id= Input::get('id');
 $ad = Ads::find($id);
 
+var_dump($id);
+
 $userId = $_SESSION['LOGGED_IN_ID'];
 $adUserId = $ad->userId;
 
@@ -29,7 +31,9 @@ $adUserId = $ad->userId;
 
 	<div class="row">
 		<?php if($userId == $adUserId): ?>
-			<a href="/items/edit"><button>Edit Item</button></a>
+
+			<a href="/items/edit?id=<?=$ad->id;?>"><button>Edit Item</button></a>
+
 			<a href="/items/edit"><button>Delete Item</button></a>
 
 		<?php endif ?>
@@ -38,3 +42,10 @@ $adUserId = $ad->userId;
 
 	</div>
 <div>
+
+
+
+
+
+
+
