@@ -1,6 +1,6 @@
 <?php 
 	$ads = Ads::displayFeaturedAds();
-	var_dump($ads);
+
 
  ?>
 <div class="container">
@@ -19,7 +19,7 @@
 
 		<div>
 
-		<img src= "/img/logo.png" width="250" height="250" >
+		<!-- <img src= "/img/logo.png" width="250" height="250" > -->
 
 		</div>
 

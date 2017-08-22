@@ -14,6 +14,7 @@ function addAnItem()
 		$description = Input::get('description');
 		$sellerName = Input::get('sellerName');
 		$username = Input::get('username');
+		$userId = $_SESSION['LOGGED_IN_ID'];
 		// $imageUrl = Input::get('imageUrl');
 
 		$ad = new Ads();
@@ -22,6 +23,7 @@ function addAnItem()
 		$ad->description = $description;
 		$ad->sellerName = $sellerName;
 		$ad->username = $username;
+		$ad->userId = $userId;
 		$ad->save();
 	}
 }
@@ -29,22 +31,26 @@ function addAnItem()
 function editItem()
 {
         $ad = Ads::find(Input::get('id'));
+
+        var_dump($ad);
+
         if (!empty($_POST)) {
 
         	$adId = Auth::id();
 
-        	$itemName = Input::get('itemname');
+        	$itemName = Input::get('name');
         	$price = Input::get('price');
 			$description = Input::get('description');
-			$sellerName = Input::get('sellerName');
-			$username = Input::get('username');
+			$sellerName = $ad->sellerName;
+			$username = $_SESSION['IS_LOGGED_IN'];
 
 
-            $ad->itemName = Input::get('name');
-            $ad->price = removeMoneyCharacters(Input::get('price'));
-            $ad->description = Input::get('description');
-            $ad->sellerName = Input::get('sellerName');
-            $ad->username = Input::get('username');
+            $ad->itemName = $itemName;
+            $ad->price = $price;
+            $ad->description = $description;
+            $ad->sellerName = $sellerName;
+            $ad->username = $username;
+            $ad->userId = $_SESSION['LOGGED_IN_ID'];
             $ad->save();
 
             var_dump($ad);
@@ -58,3 +64,9 @@ function editItem()
             
         
 }
+
+
+
+
+
+

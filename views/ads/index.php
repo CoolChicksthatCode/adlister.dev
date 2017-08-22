@@ -9,7 +9,6 @@ require_once "../utils/Input.php";
 
 $ads = Ads::all();
 
-var_dump($_SESSION);
 ?>
 
 <h1 class="text-center">All items for sale</h1>
