@@ -4,10 +4,13 @@ require_once "../models/User.php";
 require_once "../models/Ad.php";
 require_once "../utils/Auth.php";
 require_once "../utils/Input.php";
+$user = Auth::user(); 
+var_dump($user); 
+var_dump($_SESSION);
 
-$ad = Ads::find($id);
+$id = $user->id;
 
-var_dump($ad);
+var_dump($id);
 
 
 ?>
@@ -15,7 +18,6 @@ var_dump($ad);
 
 <!--Page that includes the form to edit an existing ad-->
 <div class = "container">
-	<?php $ad = Auth::user(); var_dump($ad); var_dump($_SESSION);?>
 <form method="POST">
 	<br>
 	<div class="col-md-6 col-md-offset-3">
