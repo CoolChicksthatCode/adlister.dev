@@ -37,23 +37,21 @@ public static function findAllUserById($id) {
 }
 
 // gets the 'featured items from the ads table'...the most recently created
-public static function displayFeaturedAds($num = 4) {
+public static function displayFeaturedAds($num = 3) {
 	self::dbConnect();
-	$query = 'SELECT * FROM' . static::$table . 'ORDER BY id DESC Limit' . $num;
+	$query = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC Limit ' . $num;
 
 	$stmt = self::$dbc->prepare($query);
 	$stmt->execute();
 
-	$results = $stmt->FetchAll(PDO::FETCH_ASSOC);
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-	$item =null;
-	
-	if($results) {
-		$item = new static;
-		$item->attributes = $results;
-	}
+	return array_map(function($result) {
+            $instance = new static;
+            $instance->attributes = $result;
+            return $instance;
+        }, $results);
 
-	return $item;
 
 }
 
