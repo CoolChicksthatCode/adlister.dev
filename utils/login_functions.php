@@ -59,6 +59,13 @@ function userSignUp()
 		$user->username = $username;
 		$user->password = $password; 
 		$user->save();
+
+		Auth::attempt($user->username, Input::get('password')); 
+
+		$_SESSION['SUCCESS_MESSAGE'] = "Account succesfully created!";
+
+		header('Location: /users/account?id=' . $userId );
+		die();
 	
 	}
 }
