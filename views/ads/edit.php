@@ -5,7 +5,9 @@ require_once "../models/Ad.php";
 require_once "../utils/Auth.php";
 require_once "../utils/Input.php";
 
+$ad = Ads::find($id);
 
+var_dump($ad);
 
 
 ?>
@@ -13,7 +15,7 @@ require_once "../utils/Input.php";
 
 <!--Page that includes the form to edit an existing ad-->
 <div class = "container">
-	<?php $ad = Auth::ad(); var_dump($ad); var_dump($_SESSION);?>
+	<?php $ad = Auth::user(); var_dump($ad); var_dump($_SESSION);?>
 <form method="POST">
 	<br>
 	<div class="col-md-6 col-md-offset-3">
@@ -45,7 +47,7 @@ require_once "../utils/Input.php";
 	    	<input type="file" class="form-control-file" id="fileinput">
 	  	</div>
 	  	<!-- Update Item Button -->
-		<button type="button" class="btn btn-default">Update Item</button>
+		<button type="submit" class="btn btn-default">Update Item</button>
 	</div>
 </form>
 
