@@ -1,6 +1,9 @@
 <?php
 
 require_once __DIR__ . '/../../models/User.php';
+require_once __DIR__ . '/../db_connect.php';
+
+$dbc->exec("TRUNCATE users");
 
 $user = new User;
 $user->name = 'Finn Mertens';
