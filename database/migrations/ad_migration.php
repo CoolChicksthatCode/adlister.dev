@@ -10,8 +10,9 @@ $query = 'CREATE TABLE ads (
     itemName VARCHAR(1000) NOT NULL,
     price FLOAT(10,2) NOT NULL,
     description VARCHAR(2500) NOT NULL,
-    sellerName VARCHAR(500) NOT NULL,
-    username VARCHAR(500) NOT NULL,
+    sellerName VARCHAR(500),
+    username VARCHAR(500),
+    userId INT NOT NULL,
     PRIMARY KEY (id)
 )';
 
