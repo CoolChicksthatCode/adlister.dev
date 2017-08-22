@@ -29,14 +29,30 @@ function addAnItem()
 function editItem()
 {
         $ad = Ads::find(Input::get('id'));
-        // if ($ad->id == Auth::user()->id)
-        // {
-        //     $ad->name = Input::get('name');
-        //     $ad->price = removeMoneyCharacters(Input::get('price'));
-        //     $ad->description = Input::get('description');
+        if (!empty($_POST)) {
+
+        	$adId = Auth::id();
+
+        	$itemName = Input::get('itemname');
+        	$price = Input::get('price');
+			$description = Input::get('description');
+			$sellerName = Input::get('sellerName');
+			$username = Input::get('username');
+
+
+            $ad->itemName = Input::get('name');
+            $ad->price = removeMoneyCharacters(Input::get('price'));
+            $ad->description = Input::get('description');
+            $ad->sellerName = Input::get('sellerName');
+            $ad->username = Input::get('username');
+            $ad->save();
+
+            $_SESSION['SUCCESS_MESSAGE'] = "Item successfully updated";
+
+            header('Location: /ads');
+            die();
+        }
+        
             
-        //     $ad->save();
-        //     header('Location: /ads');
-        //     die();
-        // }
+        
 }

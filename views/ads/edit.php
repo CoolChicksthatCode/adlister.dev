@@ -12,6 +12,8 @@ require_once "../utils/Input.php";
 
 
 <!--Page that includes the form to edit an existing ad-->
+<div class = "container">
+	<?php $ad = Auth::ad(); var_dump($ad); var_dump($_SESSION);?>
 <form method="POST">
 	<br>
 	<div class="col-md-6 col-md-offset-3">
@@ -46,3 +48,5 @@ require_once "../utils/Input.php";
 		<button type="button" class="btn btn-default">Update Item</button>
 	</div>
 </form>
+
+</div>
