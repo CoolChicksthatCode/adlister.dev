@@ -34,49 +34,6 @@
 				</div>
 				<a href="/users/edit"><button>Edit Profile</button></a>
 
-
-<!--  				<a href="#" data-toggle="modal" data-target="#edit-modal"><button type="button" class="btn btn-primary btn-lg">EditProfile</button></a>
-
-				<div class="modal" id="edit-modal">
-					<div class="modal-dialog">
-						<div class="modal-content">
-
-							<div class="modal-header">
-								<button class="close" type="button" data-dismiss="modal">x</button>
-								<h4>Edit profile</h4>
-							</div>
-
-							<div class="modal-body">
-								<form method="POST" action="">
-									<label for="name">User Name</label>
-									<input class="form-control" type="text" name="name" input="name" placeholder="<?=$user->name ?>" autofocus >
-									
-									<label for="email">Email</label>
-									<input class="form-control" type="email" name="email" input="email" placeholder="<?=$user->email ?>" >
-									
-									<label for="username">Username</label>
-									<input class="form-control" type="text" name="username" input="username" placeholder="<?=$user->username ?>" >
-										
-									<button class="pull-right" type="submit">Submit</button>
-									
-								</form>	
-							</div>
-						</div>	
-					</div>	
-				</div>	 -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 			</div>
 		</div>
 	</section>

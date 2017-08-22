@@ -1,5 +1,5 @@
-<?php $user = Auth::user(); ?>
 <div class="container">
+<?php $user = Auth::user(); ?>
 
 
 
