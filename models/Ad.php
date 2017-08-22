@@ -76,7 +76,13 @@ class Ads extends Model
 
 	}
 
-
+	public static function deleteAd($id)
+	{
+		self::dbConnect();
+		$stmt = self::$dbc->prepare("DELETE FROM posts WHERE id = :id");
+		$stmt->bindValue('id', $id, PDO::PARAM_STR);
+		$stmt->execute();
+	}
 
 
 }
