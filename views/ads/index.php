@@ -16,7 +16,7 @@ $ads = Ads::all();
 <div class="container">
 	<div class="row">
 		<?php foreach($ads as $ad): ?>
-		<div class="col-md-4">
+		<div class="col-md-4" align="center">
 		<img src="/img/placeholder.png" width="250" height="250">
 		<a href="/items/show?id=<?=$ad->id;?>"><h5> Item Name: <?= Input::escape($ad->itemName) ?></h5></a>
 		<h5> Item Description: <?= Input::escape($ad->description) ?></h5>
