@@ -3,11 +3,9 @@
 <div class="container">
 
 	<?php $user = Auth::user(); 
-	// var_dump($user); 
-	// var_dump($_SESSION);
 
 	$ads = Ads::userItems();
-	var_dump($ads);
+	
 
 	?>
 
@@ -56,8 +54,7 @@
 						<div class="col-md-3">
 							<img src="/img/placeholder.png" width="100" height="100">
 							<a href="/items/show?id=<?=$ad->id;?>"><h5> Item Name: <?= Input::escape($ad->itemName) ?></h5></a>
-							<h5> Item Description: <?= Input::escape($ad->description) ?></h5>
-							<a href="/items/edit"><button>Edit Item</button></a>
+							
 
 						</div>
 					<?php endforeach; ?>

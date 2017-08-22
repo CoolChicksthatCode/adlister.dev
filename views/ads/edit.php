@@ -8,10 +8,8 @@ $user = Auth::user();
 $id = $user->id;
 
 $itemId= Input::get('id');
-
 $ad = Ads::find($itemId);
 
-var_dump($_POST);
 
 ?>
 

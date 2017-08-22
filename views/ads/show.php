@@ -9,7 +9,7 @@ require_once "../utils/Input.php";
 $id= Input::get('id');
 $ad = Ads::find($id);
 
-var_dump($id);
+
 
 $userId = $_SESSION['LOGGED_IN_ID'];
 $adUserId = $ad->userId;
