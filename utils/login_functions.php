@@ -60,6 +60,8 @@ function userSignUp()
 		$user->password = $password; 
 		$user->save();
 
+		$userId = $user->id; 
+
 		Auth::attempt($user->username, Input::get('password')); 
 
 		$_SESSION['SUCCESS_MESSAGE'] = "Account succesfully created!";
