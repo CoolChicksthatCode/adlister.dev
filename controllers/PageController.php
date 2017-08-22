@@ -76,6 +76,10 @@ function pageController()
             // }
             break;
 
+        case '/items/delete':
+             $mainView = '../views/ads/delete.php';
+             break;
+
 
         default: // displays 404 if route not specified above
             $mainView = '../views/404.php';

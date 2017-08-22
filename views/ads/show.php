@@ -34,7 +34,8 @@ $adUserId = $ad->userId;
 
 			<a href="/items/edit?id=<?=$ad->id;?>"><button>Edit Item</button></a>
 
-			<a href="/items/edit"><button>Delete Item</button></a>
+			<a href="/items/delete?id=<?=$ad->id;?>"><button>DELETE Item</button></a>
+
 
 		<?php endif ?>
 		
