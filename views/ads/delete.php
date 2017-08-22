@@ -29,6 +29,7 @@ var_dump($_POST);
 				{
 					$ad->delete(); 
 
+					$_SESSION['SUCCESS_MESSAGE'] = "Item successfully deleted.";
 					header('Location: /users/account?=<?=$id?>');
 					die();
 				}
