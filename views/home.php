@@ -1,3 +1,8 @@
+<?php 
+    $ads = Ads::displayFeaturedAds();
+    var_dump($ads);
+
+ ?>
 <div class="container">
 
     <section id="welcome">
@@ -25,7 +30,13 @@
         <div class="row">
 
             <h3 class="section-title">Featured Items</h3>
-            <!-- Placeholder for featured items.-->
+            <?php foreach($ads as $ad): ?>
+                <div class="col-md-4">
+                    <img src="/img/placeholder.png" width="250" height="250">
+                    <a href="/items/show?id=<?=$ad->id;?>"><h5> Item Name: <?= Input::escape($ad->itemName) ?></h5></a>
+                    <h5> Item Description: <?= Input::escape($ad->description) ?></h5>
+                </div>
+            <?php endforeach; ?>
         </div>
 
     </section>

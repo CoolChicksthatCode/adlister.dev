@@ -21,7 +21,7 @@ function pageController()
             break;
 
         case '/ads':
-            Ads::all();
+            // Ads::all();
             $mainView = '../views/ads/index.php';
             break;
 
