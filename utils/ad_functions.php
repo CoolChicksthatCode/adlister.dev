@@ -47,6 +47,8 @@ function editItem()
             $ad->username = Input::get('username');
             $ad->save();
 
+            var_dump($ad);
+
             $_SESSION['SUCCESS_MESSAGE'] = "Item successfully updated";
 
             header('Location: /ads');
