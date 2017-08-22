@@ -57,6 +57,17 @@ public static function displayFeaturedAds($num = 4) {
 
 }
 
+// public static function userItems() {
+// 	$user = Auth::user();
+// 	self::dbConnect();
+// 	$query = 'SELECT * FROM' . static::$table . 'WHERE userID = ' . $user->id);
+// 	$stmt->execute();
+
+
+//     $stmt = self::$dbc->query(‘SELECT * FROM' . static::$table . 'WHERE userId = ’ . $user->id);
+//     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+//    }
+
 // protected function insert() {
 //         // TODO: call dbConnect to ensure we have a database connection
 //         self::dbConnect();
