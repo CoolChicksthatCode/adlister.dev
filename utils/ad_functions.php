@@ -17,7 +17,7 @@ function addAnItem()
 		$sellerName = $user->name;
 		$username = $user->username;
 		$userId = $_SESSION['LOGGED_IN_ID'];
-		// $image = Input::get('image');
+		$image = "placeholder.png";
 
 		$ad = new Ads();
 		$ad->itemName = $itemName;
@@ -26,7 +26,7 @@ function addAnItem()
 		$ad->sellerName = $sellerName;
 		$ad->username = $username;
 		$ad->userId = $userId;
-		// $ad->image = $image_url;
+		$ad->image = $image;
 		$ad->save();
 
         $_SESSION['SUCCESS_MESSAGE'] = "Item successfully added";
