@@ -14,9 +14,7 @@ function addAnItem()
 		$itemName = Input::get('itemName');
 		$price = Input::get('price');
 		$description = Input::get('description');
-		// $sellerName = Input::get('sellerName');
 		$sellerName = $user->name;
-		// $username = Input::get('username');
 		$username = $user->username;
 		$userId = $_SESSION['LOGGED_IN_ID'];
 		// $image = Input::get('image');

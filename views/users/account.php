@@ -51,9 +51,9 @@
 					<h3>Items for Sale</h3>
 
 					 <?php foreach($ads as $ad): ?>
-						<div class="col-md-3">
+						<div class="col-md-3" align="center">
 							<img src="/img/placeholder.png" width="100" height="100">
-							<a href="/items/show?id=<?=$ad->id;?>"><h5> Item Name: <?= Input::escape($ad->itemName) ?></h5></a>
+							<a href="/items/show?id=<?=$ad->id;?>"><h5> <?= Input::escape($ad->itemName) ?></h5></a>
 							
 
 						</div>
@@ -61,14 +61,15 @@
 					
 				</div>
 			</div>	
+		</div>
+
 			<div class="row">
 
 				<a href="/items/create"><button>Create New Ad</button></a>
-				
 			</div>	
-		</div>
+			
 	</section>
-
+				
 
 </div>
 

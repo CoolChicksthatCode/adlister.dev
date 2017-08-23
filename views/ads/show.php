@@ -37,10 +37,6 @@ $adUserId = $ad->userId;
 			<a href="/items/delete?id=<?=$ad->id;?>"><button>DELETE Item</button></a>
 
  -->
-		<?php endif ?>
-		
-
-
 			<a href="#" data-toggle="modal" data-target="#deleteModal"><button type="button" class="btn btn-primary btn-lg">Delete Item</button></a>
 
 			<div class="modal" id="deleteModal">
@@ -71,6 +67,10 @@ $adUserId = $ad->userId;
 					</div>	
 				</div>	
 			</div>	
+		<?php endif ?>
+		
+
+
 
 
 	</div>
