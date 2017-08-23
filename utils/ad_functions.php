@@ -66,7 +66,7 @@ function editItem()
 
             $_SESSION['SUCCESS_MESSAGE'] = "Item successfully updated";
 
-            header('Location: /ads');
+            header('Location: /users/account?=' . $userId);
             die();
         }
         
