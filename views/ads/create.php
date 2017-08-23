@@ -5,8 +5,15 @@ require_once "../models/User.php";
 require_once "../models/Ad.php";
 require_once "../utils/Auth.php";
 require_once "../utils/Input.php";
+require_once "../utils/helper_functions.php";
 
 // var_dump($_POST);
+// $image=Input::get('image');
+// $imageUrl = file_get_contents($_FILES['image']);
+// var_dump($imageUrl);
+
+// $image = FileUploadException::saveUploadedImage($imageUrl);
+
 
 ?>
 
@@ -45,8 +52,8 @@ require_once "../utils/Input.php";
 	  	</div> -->
 	  	<!-- File Photo Input -->
 	  	<!-- <div class="form-group">
-    		<label for="InputFile">File input</label>
-    		<input type="file" id="InputFile">
+    		<label for="image">Upload Image</label>
+    		<input type="file" name="image" id="image">
     	</div> -->
 		<input type="submit" class="btn btn-default">
   		</div>

@@ -19,7 +19,7 @@ function addAnItem()
 		// $username = Input::get('username');
 		$username = $user->username;
 		$userId = $_SESSION['LOGGED_IN_ID'];
-		// $imageUrl = Input::get('imageUrl');
+		// $image = Input::get('image');
 
 		$ad = new Ads();
 		$ad->itemName = $itemName;
@@ -28,6 +28,7 @@ function addAnItem()
 		$ad->sellerName = $sellerName;
 		$ad->username = $username;
 		$ad->userId = $userId;
+		// $ad->image = $image_url;
 		$ad->save();
 
         $_SESSION['SUCCESS_MESSAGE'] = "Item successfully added";
