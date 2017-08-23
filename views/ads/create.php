@@ -34,15 +34,15 @@ require_once "../utils/Input.php";
 	    	<textarea class="form-control col-md-6-offset-3" id="description" name="description" placeholder="Descibe the item you are listing for sale" rows="3"></textarea>
 	  	</div>
 	  	<!-- Seller Info -->
-	  	<div class="form-group">
+<!-- 	  	<div class="form-group">
 	    	<label for="sellerName">Seller Info</label>
 	   		<input type="sellerName" class="form-control" id="sellerName" name="sellerName" placeholder="Seller Info">
-	  	</div>
+	  	</div> -->
 	  	<!-- Username -->
-	  	<div class="form-group">
+	<!--   	<div class="form-group">
 	    	<label for="username">Username</label>
 	   		<input type="username" class="form-control" id="username" name="username" placeholder="username">
-	  	</div>
+	  	</div> -->
 	  	<!-- File Photo Input -->
 	  	<!-- <div class="form-group">
     		<label for="InputFile">File input</label>

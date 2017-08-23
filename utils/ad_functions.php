@@ -8,12 +8,17 @@ require_once "../utils/Input.php";
 
 function addAnItem() 
 {
+	$user = Auth::user();
+	var_dump($user);
+
 	if (!empty($_POST)){
 		$itemName = Input::get('itemName');
 		$price = Input::get('price');
 		$description = Input::get('description');
-		$sellerName = Input::get('sellerName');
-		$username = Input::get('username');
+		// $sellerName = Input::get('sellerName');
+		$sellerName = $user->name;
+		// $username = Input::get('username');
+		$username = $user->username;
 		$userId = $_SESSION['LOGGED_IN_ID'];
 		// $imageUrl = Input::get('imageUrl');
 
@@ -25,6 +30,11 @@ function addAnItem()
 		$ad->username = $username;
 		$ad->userId = $userId;
 		$ad->save();
+
+        $_SESSION['SUCCESS_MESSAGE'] = "Item successfully added";
+
+        header('Location: /users/account?=' . $userId);
+        die();
 	}
 }
 
@@ -53,7 +63,6 @@ function editItem()
             $ad->userId = $_SESSION['LOGGED_IN_ID'];
             $ad->save();
 
-            var_dump($ad);
 
             $_SESSION['SUCCESS_MESSAGE'] = "Item successfully updated";
 
