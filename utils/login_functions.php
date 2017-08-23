@@ -100,14 +100,34 @@ function updateAccountInfo()
 		die();
 
 	}
-
-
-
 }
 
 
 
 
+// function updateAccountInfo()
+// {
+// 	$userId = Input::get('id');
 
+// 	if(!empty($_POST) && $userId == Auth::id() ){
+
+// 		$user = Auth::user();
+// 		$name = Input::get('name');
+// 		$email = Input::get('email');
+// 		$username = Input::get('username');
+
+// 		$user->name = $name;
+// 		$user->email = $email;
+// 		$user->username = $username;
+// 		$user->save();
+
+// 		$_SESSION['SUCCESS_MESSAGE'] = "Account succesfully updated!";
+
+// 		header('Location: /users/account?id=' . $userId );
+// 		die();
+// 	}
+
+
+// }
 
  ?>

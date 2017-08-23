@@ -18,42 +18,26 @@ var_dump($_POST);
 
 ?>
 
-
-<!--Page that includes the form to edit an existing ad-->
 <div class = "container">
-<form method="POST" action="">
-	<br>
-	<div class="col-md-6 col-md-offset-3">
-		<h2>Are you sure you want to delete <br> <?=$ad->itemName; ?>?</h2>
-<!-- 
-	  	<div class="form-group">
-	    	<input type="hidden" name="name" class="form-control" id="name" value="<?= $ad->itemName; ?>" placeholder="Name of the Item">
-	  	</div>
+	<form method="POST" action="">
+		<div class="col-md-6 col-md-offset-3">
+			<h2>Are you sure you want to delete <br> <?=$ad->itemName; ?>?</h2>
+			<button name="delete" value="<?=$ad->id ?>" type="submit" class="btn btn-default">DELETE Item</button>
 
-	  	<div class="form-group">
-	   		<input type="hidden" name="price" class="form-control" id="price" value="<?= $ad->price;?>" placeholder="Price of the Item ($)">
-	  	</div>
+			<?php 
+				if(isset($_POST['delete']))
+				{
+					$ad->delete(); 
 
-		<div class="form-group">
-	    	<br>
-	    	<textarea type="hidden" class="form-control col-md-6-offset-3" name="description" id="description" rows="0"><?= $ad->description ?></textarea>
-	  	</div>
+					$_SESSION['SUCCESS_MESSAGE'] = "Item successfully deleted.";
+					header('Location: /users/account?=<?=$id?>');
+					die();
+				}
+			?>
 
-		<div class="form-group">
-	    	<input type="hidden" class="form-control-file" id="fileinput">
-	  	</div> -->
-
-	  	<!-- Update Item Button -->
-		<button name="delete" value="<?=$ad->id ?>" type="submit" class="btn btn-default">DELETE Item</button>
-
-		 <?php if(isset($_POST['delete'])){
-			$ad->delete(); 
-
-			header('Location: /');
-			die();}
-			 ?>
-		
-	</div>
-</form>
-
+		</div>
+	</form>
 </div>
+
+
+

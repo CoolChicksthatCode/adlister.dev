@@ -37,7 +37,7 @@
 					<p>Username: <?= $user->username ?></p>
 					
 				</div>
-				<a href="/users/edit"><button>Edit Profile</button></a>
+				<a href="/users/edit?id=<?=$user->id ?>"><button>Edit Profile</button></a>
 
 			</div>
 		</div>

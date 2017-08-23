@@ -9,6 +9,15 @@ body{
 	margin-bottom: 0px;
 }
 
+#delete-text{
+	color: black;
+	text-align: center;
+}
+
+.modal-body{
+	height: 50px;
+}
+
 footer {
 	position: absolute;
 	right: 0;
