@@ -48,12 +48,12 @@ $adUserId = $ad->userId;
 					<div class="modal-content">
 						<div class="modal-header">
 							<button class="close" type="button" data-dismiss="modal">x</button>
-							<h2>Are you sure you want to delete <br> <?=$ad->itemName; ?>?</h2>
+							<h2 id="delete-text">Are you sure you want to delete <?=$ad->itemName; ?>?</h2>
 						</div>
 						<div class="modal-body">
 							<form method="POST" action="">
 
-								<button name="delete" value="<?=$ad->id ?>" class="pull-right" type="submit">Submit</button>
+								<button name="delete" value="<?=$ad->id ?>" class="pull-right" type="submit" id="submit-button">Submit</button>
 
 								<?php 
 									if(isset($_POST['delete']))

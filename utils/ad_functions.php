@@ -9,7 +9,6 @@ require_once "../utils/Input.php";
 function addAnItem() 
 {
 	$user = Auth::user();
-	var_dump($user);
 
 	if (!empty($_POST)){
 		$itemName = Input::get('itemName');
