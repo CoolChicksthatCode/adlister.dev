@@ -26,6 +26,7 @@ $ads = Ads::all();
 		<?php endif ?>
 
 		<h5> Item Description: <?= Input::escape($ad->description) ?></h5>
+
 		</div>
 		<?php endforeach; ?>
 	<div>
