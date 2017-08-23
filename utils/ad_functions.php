@@ -40,7 +40,6 @@ function editItem()
 {
         $ad = Ads::find(Input::get('id'));
 
-        var_dump($ad);
 
         if (!empty($_POST)) {
 

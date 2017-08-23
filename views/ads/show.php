@@ -22,7 +22,7 @@ $adUserId = $ad->userId;
 <br>
 	<div class="row">
 		<div class="col-md-4" align="center">
-		<img src="/img/placeholder.png" width="250" height="250">
+		<img src="/img/<?=$ad->image ?>" width="250" height="250">
 		<h5> Item Price: <?= Input::escape($ad->price) ?></h5>
 		<h5> Item Description: <?= Input::escape($ad->description) ?></h5>
 		<h5> Seller Name: <?= Input::escape($ad->sellerName) ?></h5>

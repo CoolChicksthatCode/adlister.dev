@@ -12,6 +12,7 @@ $dbc->exec("TRUNCATE ads");
 	$ad->sellerName = "Finn Mertens";
 	$ad->username = "finn_the_human";
 	$ad->userId = 1;
+	$ad->image = "shirt.jpg";
 	$ad->save();
 
 	$ad = new Ads();
@@ -21,6 +22,7 @@ $dbc->exec("TRUNCATE ads");
 	$ad->sellerName = "Jake";
 	$ad->username = "jake_the_dog";
 	$ad->userId = 2;
+	$ad->image = "cat.jpg";
 	$ad->save();
 
 	$ad = new Ads();
@@ -30,6 +32,7 @@ $dbc->exec("TRUNCATE ads");
 	$ad->sellerName = "Simon Petrikov";
 	$ad->username = "ice_king";
 	$ad->userId = 3;
+	$ad->image = "dog.jpg";
 	$ad->save();
 
 	$ad = new Ads();
@@ -39,6 +42,7 @@ $dbc->exec("TRUNCATE ads");
 	$ad->sellerName = "Marceline Abadeer";
 	$ad->username = "marceline_abadeer";
 	$ad->userId = 4;
+	$ad->image = "phone.jpg";
 	$ad->save();
 
 	$ad = new Ads();
@@ -48,6 +52,7 @@ $dbc->exec("TRUNCATE ads");
 	$ad->sellerName = "Finn Mertens";
 	$ad->username = "finn_the_human";
 	$ad->userId = 1;
+	$ad->image = "bottle.jpg";
 	$ad->save();
 
 

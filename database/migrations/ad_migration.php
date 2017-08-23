@@ -13,7 +13,7 @@ $query = 'CREATE TABLE ads (
     sellerName VARCHAR(500),
     username VARCHAR(500),
     userId INT NOT NULL,
-    -- image VARCHAR(500),
+    image VARCHAR(1000),
     PRIMARY KEY (id)
 )';
 

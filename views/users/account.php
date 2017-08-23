@@ -52,7 +52,7 @@
 
 					 <?php foreach($ads as $ad): ?>
 						<div class="col-md-3" align="center">
-							<img src="/img/placeholder.png" width="100" height="100">
+							<img src="/img/<?=$ad->image ?>" width="100" height="100">
 							<a href="/items/show?id=<?=$ad->id;?>"><h5> <?= Input::escape($ad->itemName) ?></h5></a>
 							
 
@@ -67,7 +67,7 @@
 
 				<a href="/items/create"><button>Create New Ad</button></a>
 			</div>	
-			
+
 	</section>
 				
 
